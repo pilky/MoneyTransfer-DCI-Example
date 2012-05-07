@@ -13,6 +13,10 @@
 		9967C9B31558210A0003D5D1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9967C9B11558210A0003D5D1 /* Credits.rtf */; };
 		9967C9B61558210A0003D5D1 /* M3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967C9B51558210A0003D5D1 /* M3AppDelegate.m */; };
 		9967C9B91558210A0003D5D1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9967C9B71558210A0003D5D1 /* MainMenu.xib */; };
+		9967C9C5155825320003D5D1 /* M3Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967C9C3155825080003D5D1 /* M3Bank.m */; };
+		9967C9C6155825360003D5D1 /* M3Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967C9C0155824EF0003D5D1 /* M3Account.m */; };
+		9967C9CB1558273B0003D5D1 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9967C9C91558273B0003D5D1 /* MainWindowController.xib */; };
+		9967C9CC15582AE60003D5D1 /* M3MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967C9C81558273B0003D5D1 /* M3MainWindowController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +33,13 @@
 		9967C9B41558210A0003D5D1 /* M3AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppDelegate.h; sourceTree = "<group>"; };
 		9967C9B51558210A0003D5D1 /* M3AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppDelegate.m; sourceTree = "<group>"; };
 		9967C9B81558210A0003D5D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		9967C9BF155824EF0003D5D1 /* M3Account.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Account.h; sourceTree = "<group>"; };
+		9967C9C0155824EF0003D5D1 /* M3Account.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3Account.m; sourceTree = "<group>"; };
+		9967C9C2155825080003D5D1 /* M3Bank.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3Bank.h; sourceTree = "<group>"; };
+		9967C9C3155825080003D5D1 /* M3Bank.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3Bank.m; sourceTree = "<group>"; };
+		9967C9C71558273B0003D5D1 /* M3MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3MainWindowController.h; sourceTree = "<group>"; };
+		9967C9C81558273B0003D5D1 /* M3MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3MainWindowController.m; sourceTree = "<group>"; };
+		9967C9C91558273B0003D5D1 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,9 +93,9 @@
 		9967C9A81558210A0003D5D1 /* Money Transfer */ = {
 			isa = PBXGroup;
 			children = (
-				9967C9B41558210A0003D5D1 /* M3AppDelegate.h */,
-				9967C9B51558210A0003D5D1 /* M3AppDelegate.m */,
-				9967C9B71558210A0003D5D1 /* MainMenu.xib */,
+				9967C9CD1558301C0003D5D1 /* Model */,
+				9967C9CE155830220003D5D1 /* View */,
+				9967C9CF155830280003D5D1 /* Controller */,
 				9967C9A91558210A0003D5D1 /* Supporting Files */,
 			);
 			path = "Money Transfer";
@@ -100,6 +111,37 @@
 				9967C9B11558210A0003D5D1 /* Credits.rtf */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9967C9CD1558301C0003D5D1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				9967C9C2155825080003D5D1 /* M3Bank.h */,
+				9967C9C3155825080003D5D1 /* M3Bank.m */,
+				9967C9BF155824EF0003D5D1 /* M3Account.h */,
+				9967C9C0155824EF0003D5D1 /* M3Account.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		9967C9CE155830220003D5D1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				9967C9C71558273B0003D5D1 /* M3MainWindowController.h */,
+				9967C9C81558273B0003D5D1 /* M3MainWindowController.m */,
+				9967C9C91558273B0003D5D1 /* MainWindowController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		9967C9CF155830280003D5D1 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				9967C9B41558210A0003D5D1 /* M3AppDelegate.h */,
+				9967C9B51558210A0003D5D1 /* M3AppDelegate.m */,
+				9967C9B71558210A0003D5D1 /* MainMenu.xib */,
+			);
+			name = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,6 +199,7 @@
 				9967C9AD1558210A0003D5D1 /* InfoPlist.strings in Resources */,
 				9967C9B31558210A0003D5D1 /* Credits.rtf in Resources */,
 				9967C9B91558210A0003D5D1 /* MainMenu.xib in Resources */,
+				9967C9CB1558273B0003D5D1 /* MainWindowController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -169,6 +212,9 @@
 			files = (
 				9967C9AF1558210A0003D5D1 /* main.m in Sources */,
 				9967C9B61558210A0003D5D1 /* M3AppDelegate.m in Sources */,
+				9967C9C5155825320003D5D1 /* M3Bank.m in Sources */,
+				9967C9C6155825360003D5D1 /* M3Account.m in Sources */,
+				9967C9CC15582AE60003D5D1 /* M3MainWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

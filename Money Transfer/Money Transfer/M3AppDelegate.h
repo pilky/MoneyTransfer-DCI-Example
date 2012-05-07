@@ -7,9 +7,12 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "M3MainWindowController.h"
+#import "M3Bank.h"
 
-@interface M3AppDelegate : NSObject <NSApplicationDelegate>
+@interface M3AppDelegate : NSObject <NSApplicationDelegate, M3MainWindowControllerDelegate>
 
-@property (assign) IBOutlet NSWindow *window;
+@property (readonly, strong) M3MainWindowController *mainWindowController;
+@property (readonly, strong) M3Bank *bank;
 
 @end
