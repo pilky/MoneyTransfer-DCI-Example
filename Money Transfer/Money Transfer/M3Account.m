@@ -39,7 +39,25 @@
 }
 
 - (BOOL)transfer:(NSUInteger)aAmount toAccount:(M3Account *)aDestinationAccount error:(NSError *__autoreleasing *)aError {
+	if (!aDestinationAccount) {
+		*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:2 userInfo:@{
+			NSLocalizedDescriptionKey : @"No account selected",
+			NSLocalizedRecoverySuggestionErrorKey : @"Please select an account to transfer to."
+		}];
+		return NO;
+	}
+
+	if ([self withdraw:aAmount error:&*aError]) {
+		[aDestinationAccount deposit:aAmount];
+		return YES;
+	}
 	return NO;
+}
+
+- (NSString *)description {
+	NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
+	[currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+	return [NSString stringWithFormat:@"%@ (%@)", self.accountID, [currencyFormatter stringForObjectValue:[NSNumber numberWithInteger:self.balance]]];
 }
 
 @end

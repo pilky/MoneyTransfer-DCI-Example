@@ -75,4 +75,11 @@
 	}
 }
 
+- (void)controller:(M3MainWindowController *)aController transferAmount:(NSUInteger)aAmount fromAccount:(M3Account *)aFromAccount toAccount:(M3Account *)aToAccount {
+	NSError *error = nil;
+	if (![aFromAccount transfer:aAmount toAccount:aToAccount error:&error]) {
+		[self.mainWindowController presentError:error];
+	}
+}
+
 @end

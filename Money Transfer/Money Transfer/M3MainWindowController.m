@@ -10,13 +10,14 @@
 
 @interface M3MainWindowController ()
 
-- (void)priv_updateSelection;
+- (void)_updateSelection;
 
 @end
 
-@implementation M3MainWindowController {
-	NSNumberFormatter *currencyFormatter;
-}
+@implementation M3MainWindowController
+
+@synthesize transferDestinationPopup;
+@synthesize transferAmountField;
 @synthesize withdrawAmountField;
 @synthesize accountBalanceField;
 @synthesize depositAmountField;
@@ -24,15 +25,13 @@
 - (id)init {
 	if ((self = [super initWithWindowNibName:@"MainWindowController"])) {
 		[self addObserver:self forKeyPath:@"accounts" options:0 context:NULL];
-		currencyFormatter = [[NSNumberFormatter alloc] init];
-		[currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 	}
 	return self;
 }
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	[self.accountsTable reloadData];
-	[self performSelector:@selector(priv_updateSelection) withObject:nil afterDelay:0];
+	[self performSelector:@selector(_updateSelection) withObject:nil afterDelay:0];
 }
 
 - (void)presentError:(NSError *)aError {
@@ -44,8 +43,9 @@
 }
 
 
-- (void)priv_updateSelection {
+- (void)_updateSelection {
 	[self.accountBalanceField setObjectValue:[NSNumber numberWithInteger:self.selectedAccount.balance]];
+	[self _updateTransferDestinations];
 }
 
 
@@ -57,12 +57,11 @@
 }
 
 - (id)tableView:(NSTableView *)aTableView objectValueForTableColumn:(NSTableColumn *)aTableColumn row:(NSInteger)rowIndex {
-	M3Account *account = self.accounts[rowIndex];
-	return [NSString stringWithFormat:@"%@ (%@)", account.accountID, [currencyFormatter stringForObjectValue:[NSNumber numberWithInteger:account.balance]]];
+	return [self.accounts[rowIndex] description];
 }
 
 - (void)tableViewSelectionDidChange:(NSNotification *)notification {
-	[self priv_updateSelection];
+	[self _updateSelection];
 }
 
 - (IBAction)showOpenAccountSheet:(id)sender {
@@ -72,7 +71,7 @@
 
 - (IBAction)closeAccount:(id)sender {
 	[self.delegate controller:self closeAccount:self.selectedAccount];
-	[self priv_updateSelection];
+	[self _updateSelection];
 }
 
 
@@ -92,14 +91,15 @@
 }
 
 
-
 #pragma mark -
 #pragma mark Depositing
 
 - (IBAction)deposit:(id)sender {
-	[self.delegate controller:self depositAmount:self.depositAmountField.integerValue intoAccount:self.selectedAccount];
+	[self.delegate controller:self
+				depositAmount:self.depositAmountField.integerValue
+				  intoAccount:self.selectedAccount];
 	[self.accountsTable reloadData];
-	[self priv_updateSelection];
+	[self _updateSelection];
 }
 
 
@@ -107,9 +107,37 @@
 #pragma mark Withdrawing
 
 - (IBAction)withdraw:(id)sender {
-	[self.delegate controller:self withdrawAmount:self.withdrawAmountField.integerValue fromAccount:self.selectedAccount];
+	[self.delegate controller:self
+			   withdrawAmount:self.withdrawAmountField.integerValue
+				  fromAccount:self.selectedAccount];
 	[self.accountsTable reloadData];
-	[self priv_updateSelection];
+	[self _updateSelection];
+}
+
+
+#pragma mark -
+#pragma mark Transfers
+
+- (void)_updateTransferDestinations {
+	[self.transferDestinationPopup removeAllItems];
+	[self.transferDestinationPopup addItemWithTitle:@"Please select an account…"];
+	[self.transferDestinationPopup.lastItem setEnabled:NO];
+
+	for (M3Account *account in self.accounts) {
+		if (![account isEqual:self.selectedAccount]) {
+			[self.transferDestinationPopup addItemWithTitle:account.description];
+			[self.transferDestinationPopup.lastItem setRepresentedObject:account];
+		}
+	}
+}
+
+- (IBAction)transfer:(id)sender {
+	[self.delegate controller:self
+			   transferAmount:self.transferAmountField.integerValue
+				  fromAccount:self.selectedAccount
+					toAccount:self.transferDestinationPopup.selectedItem.representedObject];
+	[self.accountsTable reloadData];
+	[self _updateSelection];
 }
 
 @end

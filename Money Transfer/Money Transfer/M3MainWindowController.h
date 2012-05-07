@@ -37,6 +37,10 @@
 @property (weak) IBOutlet NSTextField *withdrawAmountField;
 - (IBAction)withdraw:(id)sender;
 
+@property (weak) IBOutlet NSPopUpButton *transferDestinationPopup;
+@property (weak) IBOutlet NSTextField *transferAmountField;
+- (IBAction)transfer:(id)sender;
+
 @end
 
 
@@ -47,5 +51,6 @@
 - (void)controller:(M3MainWindowController *)aController closeAccount:(M3Account *)aAccount;
 - (void)controller:(M3MainWindowController *)aController depositAmount:(NSUInteger)aAmount intoAccount:(M3Account *)aAccount;
 - (void)controller:(M3MainWindowController *)aController withdrawAmount:(NSUInteger)aAmount fromAccount:(M3Account *)aAccount;
+- (void)controller:(M3MainWindowController *)aController transferAmount:(NSUInteger)aAmount fromAccount:(M3Account *)aFromAccount toAccount:(M3Account *)aToAccount;
 
 @end
