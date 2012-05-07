@@ -1,0 +1,301 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		9967C9A31558210A0003D5D1 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9967C9A21558210A0003D5D1 /* Cocoa.framework */; };
+		9967C9AD1558210A0003D5D1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 9967C9AB1558210A0003D5D1 /* InfoPlist.strings */; };
+		9967C9AF1558210A0003D5D1 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967C9AE1558210A0003D5D1 /* main.m */; };
+		9967C9B31558210A0003D5D1 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 9967C9B11558210A0003D5D1 /* Credits.rtf */; };
+		9967C9B61558210A0003D5D1 /* M3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967C9B51558210A0003D5D1 /* M3AppDelegate.m */; };
+		9967C9B91558210A0003D5D1 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9967C9B71558210A0003D5D1 /* MainMenu.xib */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		9967C99E1558210A0003D5D1 /* Money Transfer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Transfer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		9967C9A21558210A0003D5D1 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		9967C9A51558210A0003D5D1 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		9967C9A61558210A0003D5D1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		9967C9A71558210A0003D5D1 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		9967C9AA1558210A0003D5D1 /* Money Transfer-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Money Transfer-Info.plist"; sourceTree = "<group>"; };
+		9967C9AC1558210A0003D5D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		9967C9AE1558210A0003D5D1 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		9967C9B01558210A0003D5D1 /* Money Transfer-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Money Transfer-Prefix.pch"; sourceTree = "<group>"; };
+		9967C9B21558210A0003D5D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		9967C9B41558210A0003D5D1 /* M3AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppDelegate.h; sourceTree = "<group>"; };
+		9967C9B51558210A0003D5D1 /* M3AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppDelegate.m; sourceTree = "<group>"; };
+		9967C9B81558210A0003D5D1 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		9967C99B1558210A0003D5D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9967C9A31558210A0003D5D1 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		9967C9931558210A0003D5D1 = {
+			isa = PBXGroup;
+			children = (
+				9967C9A81558210A0003D5D1 /* Money Transfer */,
+				9967C9A11558210A0003D5D1 /* Frameworks */,
+				9967C99F1558210A0003D5D1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		9967C99F1558210A0003D5D1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				9967C99E1558210A0003D5D1 /* Money Transfer.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		9967C9A11558210A0003D5D1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9967C9A21558210A0003D5D1 /* Cocoa.framework */,
+				9967C9A41558210A0003D5D1 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		9967C9A41558210A0003D5D1 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9967C9A51558210A0003D5D1 /* AppKit.framework */,
+				9967C9A61558210A0003D5D1 /* CoreData.framework */,
+				9967C9A71558210A0003D5D1 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		9967C9A81558210A0003D5D1 /* Money Transfer */ = {
+			isa = PBXGroup;
+			children = (
+				9967C9B41558210A0003D5D1 /* M3AppDelegate.h */,
+				9967C9B51558210A0003D5D1 /* M3AppDelegate.m */,
+				9967C9B71558210A0003D5D1 /* MainMenu.xib */,
+				9967C9A91558210A0003D5D1 /* Supporting Files */,
+			);
+			path = "Money Transfer";
+			sourceTree = "<group>";
+		};
+		9967C9A91558210A0003D5D1 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				9967C9AA1558210A0003D5D1 /* Money Transfer-Info.plist */,
+				9967C9AB1558210A0003D5D1 /* InfoPlist.strings */,
+				9967C9AE1558210A0003D5D1 /* main.m */,
+				9967C9B01558210A0003D5D1 /* Money Transfer-Prefix.pch */,
+				9967C9B11558210A0003D5D1 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		9967C99D1558210A0003D5D1 /* Money Transfer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 9967C9BC1558210A0003D5D1 /* Build configuration list for PBXNativeTarget "Money Transfer" */;
+			buildPhases = (
+				9967C99A1558210A0003D5D1 /* Sources */,
+				9967C99B1558210A0003D5D1 /* Frameworks */,
+				9967C99C1558210A0003D5D1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Money Transfer";
+			productName = "Money Transfer";
+			productReference = 9967C99E1558210A0003D5D1 /* Money Transfer.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		9967C9951558210A0003D5D1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = M3;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "M Cubed Software";
+			};
+			buildConfigurationList = 9967C9981558210A0003D5D1 /* Build configuration list for PBXProject "Money Transfer" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 9967C9931558210A0003D5D1;
+			productRefGroup = 9967C99F1558210A0003D5D1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				9967C99D1558210A0003D5D1 /* Money Transfer */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		9967C99C1558210A0003D5D1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9967C9AD1558210A0003D5D1 /* InfoPlist.strings in Resources */,
+				9967C9B31558210A0003D5D1 /* Credits.rtf in Resources */,
+				9967C9B91558210A0003D5D1 /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		9967C99A1558210A0003D5D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9967C9AF1558210A0003D5D1 /* main.m in Sources */,
+				9967C9B61558210A0003D5D1 /* M3AppDelegate.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		9967C9AB1558210A0003D5D1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9967C9AC1558210A0003D5D1 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		9967C9B11558210A0003D5D1 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9967C9B21558210A0003D5D1 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		9967C9B71558210A0003D5D1 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				9967C9B81558210A0003D5D1 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		9967C9BA1558210A0003D5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		9967C9BB1558210A0003D5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		9967C9BD1558210A0003D5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Money Transfer/Money Transfer-Prefix.pch";
+				INFOPLIST_FILE = "Money Transfer/Money Transfer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		9967C9BE1558210A0003D5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Money Transfer/Money Transfer-Prefix.pch";
+				INFOPLIST_FILE = "Money Transfer/Money Transfer-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		9967C9981558210A0003D5D1 /* Build configuration list for PBXProject "Money Transfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9967C9BA1558210A0003D5D1 /* Debug */,
+				9967C9BB1558210A0003D5D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		9967C9BC1558210A0003D5D1 /* Build configuration list for PBXNativeTarget "Money Transfer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				9967C9BD1558210A0003D5D1 /* Debug */,
+				9967C9BE1558210A0003D5D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 9967C9951558210A0003D5D1 /* Project object */;
+}
