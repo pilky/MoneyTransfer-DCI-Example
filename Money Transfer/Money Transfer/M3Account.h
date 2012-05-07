@@ -15,7 +15,7 @@
 @property (readonly) NSString *accountID;
 @property (readonly) NSUInteger balance;
 
-- (BOOL)deposit:(NSUInteger)aAmount error:(NSError **)aError;
+- (void)deposit:(NSUInteger)aAmount;
 - (BOOL)withdraw:(NSUInteger)aAmount error:(NSError **)aError;
 - (BOOL)transfer:(NSUInteger)aAmount toAccount:(M3Account *)aDestinationAccount error:(NSError **)aError;
 

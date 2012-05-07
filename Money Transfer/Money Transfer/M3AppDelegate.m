@@ -32,6 +32,11 @@
 #pragma mark App delegate stuff
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+	[self.bank openAccountWithID:@"Savings1"];
+	[self.bank openAccountWithID:@"Current1"];
+	[self.bank openAccountWithID:@"Current2"];
+
+
 	[self.mainWindowController setAccounts:self.bank.accounts];
 	[self.mainWindowController showWindow:self];
 }
@@ -51,7 +56,23 @@
 }
 
 - (void)controller:(M3MainWindowController *)aController closeAccount:(M3Account *)aAccount {
-	[self.bank closeAccount:aAccount error:NULL];
+	NSError *error = nil;
+	if ([self.bank closeAccount:aAccount error:&error]) {
+		[self.mainWindowController setAccounts:self.bank.accounts];
+	} else {
+		[self.mainWindowController presentError:error];
+	}
+}
+
+- (void)controller:(M3MainWindowController *)aController depositAmount:(NSUInteger)aAmount intoAccount:(M3Account *)aAccount {
+	[aAccount deposit:aAmount];
+}
+
+- (void)controller:(M3MainWindowController *)aController withdrawAmount:(NSUInteger)aAmount fromAccount:(M3Account *)aAccount {
+	NSError *error = nil;
+	if (![aAccount withdraw:aAmount error:&error]) {
+		[self.mainWindowController presentError:error];
+	}
 }
 
 @end

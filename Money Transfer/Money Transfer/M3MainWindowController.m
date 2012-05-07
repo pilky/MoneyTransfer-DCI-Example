@@ -10,11 +10,16 @@
 
 @interface M3MainWindowController ()
 
+- (void)priv_updateSelection;
+
 @end
 
 @implementation M3MainWindowController {
 	NSNumberFormatter *currencyFormatter;
 }
+@synthesize withdrawAmountField;
+@synthesize accountBalanceField;
+@synthesize depositAmountField;
 
 - (id)init {
 	if ((self = [super initWithWindowNibName:@"MainWindowController"])) {
@@ -27,6 +32,20 @@
 
 - (void)observeValueForKeyPath:(NSString *)keyPath ofObject:(id)object change:(NSDictionary *)change context:(void *)context {
 	[self.accountsTable reloadData];
+	[self performSelector:@selector(priv_updateSelection) withObject:nil afterDelay:0];
+}
+
+- (void)presentError:(NSError *)aError {
+	[NSApp presentError:aError modalForWindow:self.window delegate:nil didPresentSelector:NULL contextInfo:NULL];
+}
+
+- (M3Account *)selectedAccount {
+	return self.accounts[self.accountsTable.selectedRow];
+}
+
+
+- (void)priv_updateSelection {
+	[self.accountBalanceField setObjectValue:[NSNumber numberWithInteger:self.selectedAccount.balance]];
 }
 
 
@@ -42,14 +61,24 @@
 	return [NSString stringWithFormat:@"%@ (%@)", account.accountID, [currencyFormatter stringForObjectValue:[NSNumber numberWithInteger:account.balance]]];
 }
 
+- (void)tableViewSelectionDidChange:(NSNotification *)notification {
+	[self priv_updateSelection];
+}
+
 - (IBAction)showOpenAccountSheet:(id)sender {
 	[self.accountIDField setStringValue:@""];
 	[NSApp beginSheet:self.openAccountSheet modalForWindow:self.window modalDelegate:nil didEndSelector:NULL contextInfo:NULL];
 }
 
 - (IBAction)closeAccount:(id)sender {
-	[self.delegate controller:self closeAccount:nil];
+	[self.delegate controller:self closeAccount:self.selectedAccount];
+	[self priv_updateSelection];
 }
+
+
+
+#pragma mark -
+#pragma mark Open Account Sheet
 
 - (IBAction)openAccount:(id)sender {
 	[NSApp endSheet:self.openAccountSheet];
@@ -61,4 +90,26 @@
 	[NSApp endSheet:self.openAccountSheet];
 	[self.openAccountSheet orderOut:self];
 }
+
+
+
+#pragma mark -
+#pragma mark Depositing
+
+- (IBAction)deposit:(id)sender {
+	[self.delegate controller:self depositAmount:self.depositAmountField.integerValue intoAccount:self.selectedAccount];
+	[self.accountsTable reloadData];
+	[self priv_updateSelection];
+}
+
+
+#pragma mark -
+#pragma mark Withdrawing
+
+- (IBAction)withdraw:(id)sender {
+	[self.delegate controller:self withdrawAmount:self.withdrawAmountField.integerValue fromAccount:self.selectedAccount];
+	[self.accountsTable reloadData];
+	[self priv_updateSelection];
+}
+
 @end

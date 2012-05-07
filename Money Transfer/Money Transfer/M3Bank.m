@@ -30,6 +30,16 @@
 }
 
 - (BOOL)closeAccount:(M3Account *)aAccount error:(NSError *__autoreleasing *)aError {
+	if (aAccount.balance == 0) {
+		[accounts removeObject:aAccount];
+		return YES;
+	}
+	
+	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:1 userInfo:@{
+		NSLocalizedDescriptionKey : @"Could not close account",
+		NSLocalizedRecoverySuggestionErrorKey : @"Please empty the account's balance before closing it."
+	}];
+	
 	return NO;
 }
 
