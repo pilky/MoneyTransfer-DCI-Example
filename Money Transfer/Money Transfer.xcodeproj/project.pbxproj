@@ -17,6 +17,8 @@
 		9967C9C6155825360003D5D1 /* M3Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967C9C0155824EF0003D5D1 /* M3Account.m */; };
 		9967C9CB1558273B0003D5D1 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9967C9C91558273B0003D5D1 /* MainWindowController.xib */; };
 		9967C9CC15582AE60003D5D1 /* M3MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9967C9C81558273B0003D5D1 /* M3MainWindowController.m */; };
+		99EA8F5A15594D900006CE30 /* M3SavingsAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F5415594CFE0006CE30 /* M3SavingsAccount.m */; };
+		99EA8F5B15594D900006CE30 /* M3OverdraftAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F5815594D120006CE30 /* M3OverdraftAccount.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,10 @@
 		9967C9C71558273B0003D5D1 /* M3MainWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3MainWindowController.h; sourceTree = "<group>"; };
 		9967C9C81558273B0003D5D1 /* M3MainWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3MainWindowController.m; sourceTree = "<group>"; };
 		9967C9C91558273B0003D5D1 /* MainWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		99EA8F5315594CFE0006CE30 /* M3SavingsAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3SavingsAccount.h; sourceTree = "<group>"; };
+		99EA8F5415594CFE0006CE30 /* M3SavingsAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3SavingsAccount.m; sourceTree = "<group>"; };
+		99EA8F5715594D120006CE30 /* M3OverdraftAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3OverdraftAccount.h; sourceTree = "<group>"; };
+		99EA8F5815594D120006CE30 /* M3OverdraftAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3OverdraftAccount.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -120,6 +126,10 @@
 				9967C9C3155825080003D5D1 /* M3Bank.m */,
 				9967C9BF155824EF0003D5D1 /* M3Account.h */,
 				9967C9C0155824EF0003D5D1 /* M3Account.m */,
+				99EA8F5315594CFE0006CE30 /* M3SavingsAccount.h */,
+				99EA8F5415594CFE0006CE30 /* M3SavingsAccount.m */,
+				99EA8F5715594D120006CE30 /* M3OverdraftAccount.h */,
+				99EA8F5815594D120006CE30 /* M3OverdraftAccount.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -215,6 +225,8 @@
 				9967C9C5155825320003D5D1 /* M3Bank.m in Sources */,
 				9967C9C6155825360003D5D1 /* M3Account.m in Sources */,
 				9967C9CC15582AE60003D5D1 /* M3MainWindowController.m in Sources */,
+				99EA8F5A15594D900006CE30 /* M3SavingsAccount.m in Sources */,
+				99EA8F5B15594D900006CE30 /* M3OverdraftAccount.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -340,6 +352,7 @@
 				9967C9BE1558210A0003D5D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

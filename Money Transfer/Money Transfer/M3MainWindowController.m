@@ -15,6 +15,7 @@
 @end
 
 @implementation M3MainWindowController
+@synthesize accountTypePopup;
 
 @synthesize transferDestinationPopup;
 @synthesize transferAmountField;
@@ -45,6 +46,7 @@
 
 - (void)_updateSelection {
 	[self.accountBalanceField setObjectValue:[NSNumber numberWithInteger:self.selectedAccount.balance]];
+	[self.accountAvailableBalanceField setObjectValue:[NSNumber numberWithInteger:self.selectedAccount.availableBalance]];
 	[self _updateTransferDestinations];
 }
 
@@ -82,7 +84,7 @@
 - (IBAction)openAccount:(id)sender {
 	[NSApp endSheet:self.openAccountSheet];
 	[self.openAccountSheet orderOut:self];
-	[self.delegate controller:self openAccountWithID:self.accountIDField.stringValue];
+	[self.delegate controller:self openAccountWithID:self.accountIDField.stringValue type:(M3AccountType)self.accountTypePopup.indexOfSelectedItem];
 }
 
 - (IBAction)cancelOpenAccount:(id)sender {

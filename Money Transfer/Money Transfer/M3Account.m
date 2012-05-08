@@ -13,9 +13,13 @@
 - (id)initWithAccountID:(NSString *)aID {
 	if ((self = [super init])) {
 		_accountID = [aID copy];
-		_balance = 10;
+		_balance = 500;
 	}
 	return self;
+}
+
+- (NSUInteger)availableBalance {
+	return self.balance;
 }
 
 - (void)deposit:(NSUInteger)aAmount {
@@ -23,7 +27,7 @@
 }
 
 - (BOOL)withdraw:(NSUInteger)aAmount error:(NSError *__autoreleasing *)aError {
-	if (aAmount <= self.balance) {
+	if (aAmount <= self.availableBalance) {
 		_balance -= aAmount;
 		return YES;
 	}
@@ -33,7 +37,7 @@
 
 	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:2 userInfo:@{
 		NSLocalizedDescriptionKey : @"Insufficient funds to withdraw",
-		NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"You can only withdraw up to %@ from this account", [formatter stringForObjectValue:[NSNumber numberWithInteger:self.balance]]]
+		NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"You can only withdraw up to %@ from this account", [formatter stringForObjectValue:[NSNumber numberWithInteger:self.availableBalance]]]
 	}];
 	return NO;
 }
@@ -57,7 +61,7 @@
 - (NSString *)description {
 	NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
 	[currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-	return [NSString stringWithFormat:@"%@ (%@)", self.accountID, [currencyFormatter stringForObjectValue:[NSNumber numberWithInteger:self.balance]]];
+	return [NSString stringWithFormat:@"Basic %@ (%@)", self.accountID, [currencyFormatter stringForObjectValue:[NSNumber numberWithInteger:self.balance]]];
 }
 
 @end

@@ -4,4 +4,7 @@
    <FileRef
       location = "group:Money Transfer/Money Transfer.xcodeproj">
    </FileRef>
+   <FileRef
+      location = "group:Money Transfer DCI/Money Transfer DCI.xcodeproj">
+   </FileRef>
 </Workspace>

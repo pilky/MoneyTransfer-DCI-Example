@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "M3Account.h"
+#import "M3Bank.h"
 
 @protocol M3MainWindowControllerDelegate;
 @interface M3MainWindowController : NSWindowController <NSTableViewDelegate>
@@ -26,10 +27,12 @@
 
 @property (strong) IBOutlet NSWindow *openAccountSheet;
 @property (weak) IBOutlet NSTextField *accountIDField;
+@property (weak) IBOutlet NSPopUpButton *accountTypePopup;
 - (IBAction)openAccount:(id)sender;
 - (IBAction)cancelOpenAccount:(id)sender;
 
 @property (weak) IBOutlet NSTextField *accountBalanceField;
+@property (weak) IBOutlet NSTextField *accountAvailableBalanceField;
 
 @property (weak) IBOutlet NSTextField *depositAmountField;
 - (IBAction)deposit:(id)sender;
@@ -47,7 +50,7 @@
 @protocol M3MainWindowControllerDelegate <NSObject>
 
 @required
-- (void)controller:(M3MainWindowController *)aController openAccountWithID:(NSString *)aAccountID;
+- (void)controller:(M3MainWindowController *)aController openAccountWithID:(NSString *)aAccountID type:(M3AccountType)aType;
 - (void)controller:(M3MainWindowController *)aController closeAccount:(M3Account *)aAccount;
 - (void)controller:(M3MainWindowController *)aController depositAmount:(NSUInteger)aAmount intoAccount:(M3Account *)aAccount;
 - (void)controller:(M3MainWindowController *)aController withdrawAmount:(NSUInteger)aAmount fromAccount:(M3Account *)aAccount;

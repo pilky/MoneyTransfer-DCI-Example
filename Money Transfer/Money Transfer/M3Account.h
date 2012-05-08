@@ -14,6 +14,7 @@
 
 @property (readonly) NSString *accountID;
 @property (readonly) NSUInteger balance;
+@property (readonly) NSUInteger availableBalance;
 
 - (void)deposit:(NSUInteger)aAmount;
 - (BOOL)withdraw:(NSUInteger)aAmount error:(NSError **)aError;

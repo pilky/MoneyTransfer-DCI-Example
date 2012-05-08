@@ -7,6 +7,8 @@
 //
 
 #import "M3Bank.h"
+#import "M3SavingsAccount.h"
+#import "M3OverdraftAccount.h"
 
 @implementation M3Bank {
 	NSMutableArray *accounts;
@@ -23,10 +25,10 @@
 	return [accounts copy];
 }
 
-- (M3Account *)openAccountWithID:(NSString *)aAccountID {
-	M3Account *account = [[M3Account alloc] initWithAccountID:aAccountID];
+- (void)openAccountWithID:(NSString *)aAccountID type:(M3AccountType)aType {
+	NSArray *classes = @[ [M3Account class], [M3OverdraftAccount class], [M3SavingsAccount class] ];
+	M3Account *account = [[classes[aType] alloc] initWithAccountID:aAccountID];
 	[accounts addObject:account];
-	return account;
 }
 
 - (BOOL)closeAccount:(M3Account *)aAccount error:(NSError *__autoreleasing *)aError {

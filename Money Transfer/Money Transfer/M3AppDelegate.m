@@ -32,9 +32,10 @@
 #pragma mark App delegate stuff
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	[self.bank openAccountWithID:@"Savings1"];
-	[self.bank openAccountWithID:@"Current1"];
-	[self.bank openAccountWithID:@"Current2"];
+	[self.bank openAccountWithID:@"1" type:M3AccountTypeBasic];
+	[self.bank openAccountWithID:@"2" type:M3AccountTypeSavings];
+	[self.bank openAccountWithID:@"3" type:M3AccountTypeBasic];
+	[self.bank openAccountWithID:@"4" type:M3AccountTypeOverdraft];
 
 
 	[self.mainWindowController setAccounts:self.bank.accounts];
@@ -50,8 +51,8 @@
 #pragma mark -
 #pragma mark Main Window Delegate Stuff
 
-- (void)controller:(M3MainWindowController *)aController openAccountWithID:(NSString *)aAccountID {
-	[self.bank openAccountWithID:aAccountID];
+- (void)controller:(M3MainWindowController *)aController openAccountWithID:(NSString *)aAccountID type:(M3AccountType)aType {
+	[self.bank openAccountWithID:aAccountID type:aType];
 	[self.mainWindowController setAccounts:self.bank.accounts];
 }
 
