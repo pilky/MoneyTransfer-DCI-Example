@@ -1,0 +1,373 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		99EA8F2615587A460006CE30 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EA8F2515587A460006CE30 /* Cocoa.framework */; };
+		99EA8F3015587A460006CE30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99EA8F2E15587A460006CE30 /* InfoPlist.strings */; };
+		99EA8F3215587A460006CE30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F3115587A460006CE30 /* main.m */; };
+		99EA8F3615587A460006CE30 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 99EA8F3415587A460006CE30 /* Credits.rtf */; };
+		99EA8F3C15587A460006CE30 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EA8F3A15587A460006CE30 /* MainMenu.xib */; };
+		99EA8F4F1559390B0006CE30 /* M3MainWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F47155938A80006CE30 /* M3MainWindowController.m */; };
+		99EA8F501559390B0006CE30 /* M3Account.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F43155938A80006CE30 /* M3Account.m */; };
+		99EA8F511559390B0006CE30 /* M3Bank.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F45155938A80006CE30 /* M3Bank.m */; };
+		99EA8F521559390B0006CE30 /* M3AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F3815587A460006CE30 /* M3AppDelegate.m */; };
+		99EA8F6015594FB70006CE30 /* M3OverdraftAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F5D15594FB60006CE30 /* M3OverdraftAccount.m */; };
+		99EA8F6115594FB70006CE30 /* M3SavingsAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F5F15594FB60006CE30 /* M3SavingsAccount.m */; };
+		99EA8F6215594FDF0006CE30 /* MainWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 99EA8F48155938A80006CE30 /* MainWindowController.xib */; };
+		99EA8F661559ACDF0006CE30 /* DCIContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F651559ACDF0006CE30 /* DCIContext.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		99EA8F2115587A460006CE30 /* Money Transfer DCI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Transfer DCI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		99EA8F2515587A460006CE30 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		99EA8F2815587A460006CE30 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		99EA8F2915587A460006CE30 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		99EA8F2A15587A460006CE30 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		99EA8F2D15587A460006CE30 /* Money Transfer DCI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Money Transfer DCI-Info.plist"; sourceTree = "<group>"; };
+		99EA8F2F15587A460006CE30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		99EA8F3115587A460006CE30 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		99EA8F3315587A460006CE30 /* Money Transfer DCI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Money Transfer DCI-Prefix.pch"; sourceTree = "<group>"; };
+		99EA8F3515587A460006CE30 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		99EA8F3715587A460006CE30 /* M3AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3AppDelegate.h; sourceTree = "<group>"; };
+		99EA8F3815587A460006CE30 /* M3AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3AppDelegate.m; sourceTree = "<group>"; };
+		99EA8F3B15587A460006CE30 /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		99EA8F42155938A80006CE30 /* M3Account.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3Account.h; sourceTree = "<group>"; };
+		99EA8F43155938A80006CE30 /* M3Account.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3Account.m; sourceTree = "<group>"; };
+		99EA8F44155938A80006CE30 /* M3Bank.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3Bank.h; sourceTree = "<group>"; };
+		99EA8F45155938A80006CE30 /* M3Bank.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3Bank.m; sourceTree = "<group>"; };
+		99EA8F46155938A80006CE30 /* M3MainWindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = M3MainWindowController.h; sourceTree = "<group>"; };
+		99EA8F47155938A80006CE30 /* M3MainWindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = M3MainWindowController.m; sourceTree = "<group>"; };
+		99EA8F48155938A80006CE30 /* MainWindowController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindowController.xib; sourceTree = "<group>"; };
+		99EA8F5C15594FB60006CE30 /* M3OverdraftAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3OverdraftAccount.h; sourceTree = "<group>"; };
+		99EA8F5D15594FB60006CE30 /* M3OverdraftAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3OverdraftAccount.m; sourceTree = "<group>"; };
+		99EA8F5E15594FB60006CE30 /* M3SavingsAccount.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3SavingsAccount.h; sourceTree = "<group>"; };
+		99EA8F5F15594FB60006CE30 /* M3SavingsAccount.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3SavingsAccount.m; sourceTree = "<group>"; };
+		99EA8F641559ACDF0006CE30 /* DCIContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCIContext.h; sourceTree = "<group>"; };
+		99EA8F651559ACDF0006CE30 /* DCIContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCIContext.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		99EA8F1E15587A460006CE30 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99EA8F2615587A460006CE30 /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		99EA8F1615587A460006CE30 = {
+			isa = PBXGroup;
+			children = (
+				99EA8F2B15587A460006CE30 /* Money Transfer DCI */,
+				99EA8F2415587A460006CE30 /* Frameworks */,
+				99EA8F2215587A460006CE30 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		99EA8F2215587A460006CE30 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F2115587A460006CE30 /* Money Transfer DCI.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		99EA8F2415587A460006CE30 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F2515587A460006CE30 /* Cocoa.framework */,
+				99EA8F2715587A460006CE30 /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		99EA8F2715587A460006CE30 /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F2815587A460006CE30 /* AppKit.framework */,
+				99EA8F2915587A460006CE30 /* CoreData.framework */,
+				99EA8F2A15587A460006CE30 /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		99EA8F2B15587A460006CE30 /* Money Transfer DCI */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F631559AB580006CE30 /* DCI */,
+				99EA8F4A155938BA0006CE30 /* View */,
+				99EA8F49155938B20006CE30 /* Model */,
+				99EA8F4B155938CB0006CE30 /* Controller */,
+				99EA8F2C15587A460006CE30 /* Supporting Files */,
+			);
+			path = "Money Transfer DCI";
+			sourceTree = "<group>";
+		};
+		99EA8F2C15587A460006CE30 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F2D15587A460006CE30 /* Money Transfer DCI-Info.plist */,
+				99EA8F2E15587A460006CE30 /* InfoPlist.strings */,
+				99EA8F3115587A460006CE30 /* main.m */,
+				99EA8F3315587A460006CE30 /* Money Transfer DCI-Prefix.pch */,
+				99EA8F3415587A460006CE30 /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		99EA8F49155938B20006CE30 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F42155938A80006CE30 /* M3Account.h */,
+				99EA8F43155938A80006CE30 /* M3Account.m */,
+				99EA8F44155938A80006CE30 /* M3Bank.h */,
+				99EA8F45155938A80006CE30 /* M3Bank.m */,
+				99EA8F5C15594FB60006CE30 /* M3OverdraftAccount.h */,
+				99EA8F5D15594FB60006CE30 /* M3OverdraftAccount.m */,
+				99EA8F5E15594FB60006CE30 /* M3SavingsAccount.h */,
+				99EA8F5F15594FB60006CE30 /* M3SavingsAccount.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		99EA8F4A155938BA0006CE30 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F46155938A80006CE30 /* M3MainWindowController.h */,
+				99EA8F47155938A80006CE30 /* M3MainWindowController.m */,
+				99EA8F48155938A80006CE30 /* MainWindowController.xib */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		99EA8F4B155938CB0006CE30 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F3715587A460006CE30 /* M3AppDelegate.h */,
+				99EA8F3815587A460006CE30 /* M3AppDelegate.m */,
+				99EA8F3A15587A460006CE30 /* MainMenu.xib */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		99EA8F631559AB580006CE30 /* DCI */ = {
+			isa = PBXGroup;
+			children = (
+				99EA8F641559ACDF0006CE30 /* DCIContext.h */,
+				99EA8F651559ACDF0006CE30 /* DCIContext.m */,
+			);
+			name = DCI;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		99EA8F2015587A460006CE30 /* Money Transfer DCI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 99EA8F3F15587A460006CE30 /* Build configuration list for PBXNativeTarget "Money Transfer DCI" */;
+			buildPhases = (
+				99EA8F1D15587A460006CE30 /* Sources */,
+				99EA8F1E15587A460006CE30 /* Frameworks */,
+				99EA8F1F15587A460006CE30 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Money Transfer DCI";
+			productName = "Money Transfer DCI";
+			productReference = 99EA8F2115587A460006CE30 /* Money Transfer DCI.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		99EA8F1815587A460006CE30 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = M3;
+				LastUpgradeCheck = 0440;
+				ORGANIZATIONNAME = "M Cubed Software";
+			};
+			buildConfigurationList = 99EA8F1B15587A460006CE30 /* Build configuration list for PBXProject "Money Transfer DCI" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 99EA8F1615587A460006CE30;
+			productRefGroup = 99EA8F2215587A460006CE30 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				99EA8F2015587A460006CE30 /* Money Transfer DCI */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		99EA8F1F15587A460006CE30 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99EA8F3015587A460006CE30 /* InfoPlist.strings in Resources */,
+				99EA8F3615587A460006CE30 /* Credits.rtf in Resources */,
+				99EA8F3C15587A460006CE30 /* MainMenu.xib in Resources */,
+				99EA8F6215594FDF0006CE30 /* MainWindowController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		99EA8F1D15587A460006CE30 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				99EA8F3215587A460006CE30 /* main.m in Sources */,
+				99EA8F4F1559390B0006CE30 /* M3MainWindowController.m in Sources */,
+				99EA8F501559390B0006CE30 /* M3Account.m in Sources */,
+				99EA8F511559390B0006CE30 /* M3Bank.m in Sources */,
+				99EA8F521559390B0006CE30 /* M3AppDelegate.m in Sources */,
+				99EA8F6015594FB70006CE30 /* M3OverdraftAccount.m in Sources */,
+				99EA8F6115594FB70006CE30 /* M3SavingsAccount.m in Sources */,
+				99EA8F661559ACDF0006CE30 /* DCIContext.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		99EA8F2E15587A460006CE30 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99EA8F2F15587A460006CE30 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		99EA8F3415587A460006CE30 /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99EA8F3515587A460006CE30 /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		99EA8F3A15587A460006CE30 /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				99EA8F3B15587A460006CE30 /* en */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		99EA8F3D15587A460006CE30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		99EA8F3E15587A460006CE30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		99EA8F4015587A460006CE30 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Money Transfer DCI/Money Transfer DCI-Prefix.pch";
+				INFOPLIST_FILE = "Money Transfer DCI/Money Transfer DCI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		99EA8F4115587A460006CE30 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Money Transfer DCI/Money Transfer DCI-Prefix.pch";
+				INFOPLIST_FILE = "Money Transfer DCI/Money Transfer DCI-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		99EA8F1B15587A460006CE30 /* Build configuration list for PBXProject "Money Transfer DCI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99EA8F3D15587A460006CE30 /* Debug */,
+				99EA8F3E15587A460006CE30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		99EA8F3F15587A460006CE30 /* Build configuration list for PBXNativeTarget "Money Transfer DCI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				99EA8F4015587A460006CE30 /* Debug */,
+				99EA8F4115587A460006CE30 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 99EA8F1815587A460006CE30 /* Project object */;
+}
