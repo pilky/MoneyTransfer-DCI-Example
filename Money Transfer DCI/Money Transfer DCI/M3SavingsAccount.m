@@ -10,12 +10,8 @@
 
 @implementation M3SavingsAccount
 
-- (BOOL)withdraw:(NSUInteger)aAmount error:(NSError *__autoreleasing *)aError {
-	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:3 userInfo:@{
-		NSLocalizedDescriptionKey : @"You cannot directly withdraw from a savings account",
-		NSLocalizedRecoverySuggestionErrorKey : @"Please transfer to a basic or overdraft account before withdrawing"
-	}];
-	return NO;
+- (BOOL)allowsWithdrawals {
+	return YES;
 }
 
 - (NSString *)description {

@@ -19,7 +19,7 @@ typedef enum {
 
 @property (readonly) NSArray *accounts;
 
-- (void)openAccountWithID:(NSString *)aAccountID type:(M3AccountType)aType;
-- (BOOL)closeAccount:(M3Account *)aAccount error:(NSError **)aError;
+- (void)addAccount:(M3Account *)aAccount;
+- (void)removeAccount:(M3Account *)aAccount;
 
 @end

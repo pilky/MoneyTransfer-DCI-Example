@@ -49,7 +49,6 @@
 
 @protocol M3MainWindowControllerDelegate <NSObject>
 
-@required
 - (void)controller:(M3MainWindowController *)aController openAccountWithID:(NSString *)aAccountID type:(M3AccountType)aType;
 - (void)controller:(M3MainWindowController *)aController closeAccount:(M3Account *)aAccount;
 - (void)controller:(M3MainWindowController *)aController depositAmount:(NSUInteger)aAmount intoAccount:(M3Account *)aAccount;

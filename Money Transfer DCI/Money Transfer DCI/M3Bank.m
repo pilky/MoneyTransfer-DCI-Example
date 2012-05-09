@@ -25,24 +25,12 @@
 	return [accounts copy];
 }
 
-- (void)openAccountWithID:(NSString *)aAccountID type:(M3AccountType)aType {
-	NSArray *classes = @[ [M3Account class], [M3OverdraftAccount class], [M3SavingsAccount class] ];
-	M3Account *account = [[classes[aType] alloc] initWithAccountID:aAccountID];
-	[accounts addObject:account];
+- (void)addAccount:(M3Account *)aAccount {
+	[accounts addObject:aAccount];
 }
 
-- (BOOL)closeAccount:(M3Account *)aAccount error:(NSError *__autoreleasing *)aError {
-	if (aAccount.balance == 0) {
-		[accounts removeObject:aAccount];
-		return YES;
-	}
-	
-	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:1 userInfo:@{
-		NSLocalizedDescriptionKey : @"Could not close account",
-		NSLocalizedRecoverySuggestionErrorKey : @"Please empty the account's balance before closing it."
-	}];
-	
-	return NO;
+- (void)removeAccount:(M3Account *)aAccount {
+	[accounts removeObject:aAccount];
 }
 
 @end

@@ -22,6 +22,10 @@
 		99EA8F661559ACDF0006CE30 /* DCIContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F651559ACDF0006CE30 /* DCIContext.m */; };
 		99EB8DAB155A9A03000F4565 /* DCIRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DA8155A9422000F4565 /* DCIRole.m */; };
 		99EB8DAF155ABC14000F4565 /* DCIWithdrawMoneyContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DAE155ABC14000F4565 /* DCIWithdrawMoneyContext.m */; };
+		99EB8DB2155ABC46000F4565 /* DCIDepositMoneyContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DB1155ABC46000F4565 /* DCIDepositMoneyContext.m */; };
+		99EB8DB5155ABC70000F4565 /* DCITransferMoneyContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DB4155ABC70000F4565 /* DCITransferMoneyContext.m */; };
+		99EB8DB8155ABC80000F4565 /* DCIOpenAccountContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DB7155ABC80000F4565 /* DCIOpenAccountContext.m */; };
+		99EB8DBB155ABC8E000F4565 /* DCICloseAccountContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DBA155ABC8E000F4565 /* DCICloseAccountContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +59,14 @@
 		99EB8DA8155A9422000F4565 /* DCIRole.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCIRole.m; sourceTree = "<group>"; };
 		99EB8DAD155ABC14000F4565 /* DCIWithdrawMoneyContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCIWithdrawMoneyContext.h; sourceTree = "<group>"; };
 		99EB8DAE155ABC14000F4565 /* DCIWithdrawMoneyContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCIWithdrawMoneyContext.m; sourceTree = "<group>"; };
+		99EB8DB0155ABC46000F4565 /* DCIDepositMoneyContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCIDepositMoneyContext.h; sourceTree = "<group>"; };
+		99EB8DB1155ABC46000F4565 /* DCIDepositMoneyContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCIDepositMoneyContext.m; sourceTree = "<group>"; };
+		99EB8DB3155ABC70000F4565 /* DCITransferMoneyContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCITransferMoneyContext.h; sourceTree = "<group>"; };
+		99EB8DB4155ABC70000F4565 /* DCITransferMoneyContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCITransferMoneyContext.m; sourceTree = "<group>"; };
+		99EB8DB6155ABC80000F4565 /* DCIOpenAccountContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCIOpenAccountContext.h; sourceTree = "<group>"; };
+		99EB8DB7155ABC80000F4565 /* DCIOpenAccountContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCIOpenAccountContext.m; sourceTree = "<group>"; };
+		99EB8DB9155ABC8E000F4565 /* DCICloseAccountContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DCICloseAccountContext.h; sourceTree = "<group>"; };
+		99EB8DBA155ABC8E000F4565 /* DCICloseAccountContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DCICloseAccountContext.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +193,14 @@
 			children = (
 				99EB8DAD155ABC14000F4565 /* DCIWithdrawMoneyContext.h */,
 				99EB8DAE155ABC14000F4565 /* DCIWithdrawMoneyContext.m */,
+				99EB8DB0155ABC46000F4565 /* DCIDepositMoneyContext.h */,
+				99EB8DB1155ABC46000F4565 /* DCIDepositMoneyContext.m */,
+				99EB8DB3155ABC70000F4565 /* DCITransferMoneyContext.h */,
+				99EB8DB4155ABC70000F4565 /* DCITransferMoneyContext.m */,
+				99EB8DB6155ABC80000F4565 /* DCIOpenAccountContext.h */,
+				99EB8DB7155ABC80000F4565 /* DCIOpenAccountContext.m */,
+				99EB8DB9155ABC8E000F4565 /* DCICloseAccountContext.h */,
+				99EB8DBA155ABC8E000F4565 /* DCICloseAccountContext.m */,
 			);
 			name = Contexts;
 			sourceTree = "<group>";
@@ -261,6 +281,10 @@
 				99EA8F661559ACDF0006CE30 /* DCIContext.m in Sources */,
 				99EB8DAB155A9A03000F4565 /* DCIRole.m in Sources */,
 				99EB8DAF155ABC14000F4565 /* DCIWithdrawMoneyContext.m in Sources */,
+				99EB8DB2155ABC46000F4565 /* DCIDepositMoneyContext.m in Sources */,
+				99EB8DB5155ABC70000F4565 /* DCITransferMoneyContext.m in Sources */,
+				99EB8DB8155ABC80000F4565 /* DCIOpenAccountContext.m in Sources */,
+				99EB8DBB155ABC8E000F4565 /* DCICloseAccountContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -32,6 +32,7 @@
 #pragma mark App delegate stuff
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+
 	[self.bank openAccountWithID:@"1" type:M3AccountTypeBasic];
 	[self.bank openAccountWithID:@"2" type:M3AccountTypeSavings];
 	[self.bank openAccountWithID:@"3" type:M3AccountTypeBasic];

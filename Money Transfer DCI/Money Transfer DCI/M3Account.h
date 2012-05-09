@@ -13,11 +13,8 @@
 - (id)initWithAccountID:(NSString *)aID;
 
 @property (readonly) NSString *accountID;
-@property (readonly) NSUInteger balance;
+@property (assign) NSUInteger balance;
 @property (readonly) NSUInteger availableBalance;
-
-- (void)deposit:(NSUInteger)aAmount;
-- (BOOL)withdraw:(NSUInteger)aAmount error:(NSError **)aError;
-- (BOOL)transfer:(NSUInteger)aAmount toAccount:(M3Account *)aDestinationAccount error:(NSError **)aError;
+@property (readonly) BOOL allowsWithdrawals;
 
 @end
