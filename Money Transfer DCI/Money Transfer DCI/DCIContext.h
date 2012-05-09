@@ -7,7 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DCIRole.h"
 
 @interface DCIContext : NSObject
+
+- (id)playerFromObject:(id)aObject forRole:(DCIRole *)aRole;
+- (void)excute:(void (^)(void))aBlock;
 
 @end
