@@ -27,7 +27,7 @@ NSString *DCIPlayerRole = @"DCIPlayerRole";
 	return aObject;
 }
 
-- (void)excute:(void (^)(void))aBlock {
+- (void)execute:(void (^)(void))aBlock {
 	for (NSDictionary *player in players) {
 		[player[DCIPlayerRole] applyToObject:player[DCIPlayerObject]];
 	}

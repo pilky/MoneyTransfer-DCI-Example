@@ -7,7 +7,12 @@
 //
 
 #import "DCIContext.h"
+#import "M3Account.h"
 
-@interface DCIWithdrawMoneyContext : DCIContext
+@interface M3WithdrawMoneyContext : DCIContext
+
+- (id)initWithSourceAccount:(M3Account *)aSourceAccount;
+
+- (BOOL)withdrawAmount:(NSUInteger)aAmount error:(NSError **)aError;
 
 @end

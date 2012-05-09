@@ -15,6 +15,5 @@
 @property (readonly) NSString *accountID;
 @property (assign) NSUInteger balance;
 @property (readonly) NSUInteger availableBalance;
-@property (readonly) BOOL allowsWithdrawals;
 
 @end

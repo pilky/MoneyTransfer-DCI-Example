@@ -10,10 +10,6 @@
 
 @implementation M3SavingsAccount
 
-- (BOOL)allowsWithdrawals {
-	return YES;
-}
-
 - (NSString *)description {
 	NSNumberFormatter *currencyFormatter = [[NSNumberFormatter alloc] init];
 	[currencyFormatter setNumberStyle:NSNumberFormatterCurrencyStyle];

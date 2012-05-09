@@ -31,7 +31,7 @@
 - (NSDictionary *)methodsFromProtocol:(Protocol *)aProtocol {
 	NSMutableDictionary *methodsDict = [NSMutableDictionary dictionary];
 	unsigned int outcount;
-	struct objc_method_description *descriptions = protocol_copyMethodDescriptionList(NSProtocolFromString(@"M3MainWindowControllerDelegate"), YES, YES, &outcount);
+	struct objc_method_description *descriptions = protocol_copyMethodDescriptionList(aProtocol, YES, YES, &outcount);
 	for (NSUInteger i = 0; i < outcount; i++) {
 		struct objc_method_description description = descriptions[i];
 		[methodsDict setObject:[NSString stringWithUTF8String:description.types] forKey:NSStringFromSelector(description.name)];

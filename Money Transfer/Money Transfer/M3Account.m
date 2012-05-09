@@ -51,10 +51,19 @@
 		return NO;
 	}
 
-	if ([self withdraw:aAmount error:&*aError]) {
+	if (self.availableBalance >= aAmount) {
+		_balance -= aAmount;
 		[aDestinationAccount deposit:aAmount];
 		return YES;
 	}
+
+	NSNumberFormatter *formatter = [NSNumberFormatter new];
+	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+	
+	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:2 userInfo:@{
+		NSLocalizedDescriptionKey : @"Insufficient funds to withdraw",
+		NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"You can only withdraw up to %@ from this account", [formatter stringForObjectValue:[NSNumber numberWithInteger:self.availableBalance]]]
+	}];
 	return NO;
 }
 

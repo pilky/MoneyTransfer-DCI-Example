@@ -22,9 +22,6 @@
 	return self.balance;
 }
 
-- (BOOL)allowsWithdrawals {
-	return YES;
-}
 
 
 - (NSString *)description {

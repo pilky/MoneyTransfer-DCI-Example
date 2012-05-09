@@ -7,7 +7,12 @@
 //
 
 #import "DCIContext.h"
+#import "M3Account.h"
 
-@interface DCIDepositMoneyContext : DCIContext
+@interface M3DepositMoneyContext : DCIContext
+
+- (id)initWithDestinationAccount:(M3Account *)aAccount;
+
+- (void)depositAmount:(NSUInteger)aAmount;
 
 @end

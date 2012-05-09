@@ -12,6 +12,6 @@
 @interface DCIContext : NSObject
 
 - (id)playerFromObject:(id)aObject forRole:(DCIRole *)aRole;
-- (void)excute:(void (^)(void))aBlock;
+- (void)execute:(void (^)(void))aBlock;
 
 @end

@@ -7,6 +7,13 @@
 //
 
 #import "M3AppDelegate.h"
+#import "M3SavingsAccount.h"
+#import "M3OverdraftAccount.h"
+#import "M3WithdrawMoneyContext.h"
+#import "M3DepositMoneyContext.h"
+#import "M3CloseAccountContext.h"
+#import "M3TransferMoneyContext.h"
+#import "M3OpenAccountContext.h"
 
 @implementation M3AppDelegate
 
@@ -32,12 +39,10 @@
 #pragma mark App delegate stuff
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-
-	[self.bank openAccountWithID:@"1" type:M3AccountTypeBasic];
-	[self.bank openAccountWithID:@"2" type:M3AccountTypeSavings];
-	[self.bank openAccountWithID:@"3" type:M3AccountTypeBasic];
-	[self.bank openAccountWithID:@"4" type:M3AccountTypeOverdraft];
-
+	[self.bank addAccount:[[M3Account alloc] initWithAccountID:@"1"]];
+	[self.bank addAccount:[[M3SavingsAccount alloc] initWithAccountID:@"2"]];
+	[self.bank addAccount:[[M3Account alloc] initWithAccountID:@"3"]];
+	[self.bank addAccount:[[M3OverdraftAccount alloc] initWithAccountID:@"4"]];
 
 	[self.mainWindowController setAccounts:self.bank.accounts];
 	[self.mainWindowController showWindow:self];
@@ -53,13 +58,15 @@
 #pragma mark Main Window Delegate Stuff
 
 - (void)controller:(M3MainWindowController *)aController openAccountWithID:(NSString *)aAccountID type:(M3AccountType)aType {
-	[self.bank openAccountWithID:aAccountID type:aType];
+	M3OpenAccountContext *context = [[M3OpenAccountContext alloc] initWithBank:self.bank];
+	[context openAccountWithID:aAccountID type:aType];
 	[self.mainWindowController setAccounts:self.bank.accounts];
 }
 
 - (void)controller:(M3MainWindowController *)aController closeAccount:(M3Account *)aAccount {
 	NSError *error = nil;
-	if ([self.bank closeAccount:aAccount error:&error]) {
+	M3CloseAccountContext *context = [[M3CloseAccountContext alloc] initWithBank:self.bank closingAccount:aAccount];
+	if ([context closeAccountWithError:&error]) {
 		[self.mainWindowController setAccounts:self.bank.accounts];
 	} else {
 		[self.mainWindowController presentError:error];
@@ -67,19 +74,22 @@
 }
 
 - (void)controller:(M3MainWindowController *)aController depositAmount:(NSUInteger)aAmount intoAccount:(M3Account *)aAccount {
-	[aAccount deposit:aAmount];
+	M3DepositMoneyContext *context = [[M3DepositMoneyContext alloc] initWithDestinationAccount:aAccount];
+	[context depositAmount:aAmount];
 }
 
 - (void)controller:(M3MainWindowController *)aController withdrawAmount:(NSUInteger)aAmount fromAccount:(M3Account *)aAccount {
 	NSError *error = nil;
-	if (![aAccount withdraw:aAmount error:&error]) {
+	M3WithdrawMoneyContext *context = [[M3WithdrawMoneyContext alloc] initWithSourceAccount:aAccount];
+	if (![context withdrawAmount:aAmount error:&error]) {
 		[self.mainWindowController presentError:error];
 	}
 }
 
 - (void)controller:(M3MainWindowController *)aController transferAmount:(NSUInteger)aAmount fromAccount:(M3Account *)aFromAccount toAccount:(M3Account *)aToAccount {
 	NSError *error = nil;
-	if (![aFromAccount transfer:aAmount toAccount:aToAccount error:&error]) {
+	M3TransferMoneyContext *context = [[M3TransferMoneyContext alloc] initWithSourceAccount:aFromAccount destinationAccount:aToAccount];
+	if (![context transferAmount:aAmount error:&error]) { //transfer with error
 		[self.mainWindowController presentError:error];
 	}
 }

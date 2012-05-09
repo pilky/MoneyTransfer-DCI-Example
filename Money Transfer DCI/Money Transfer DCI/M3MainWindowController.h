@@ -8,7 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 #import "M3Account.h"
-#import "M3Bank.h"
+#import "M3OpenAccountContext.h"
 
 @protocol M3MainWindowControllerDelegate;
 @interface M3MainWindowController : NSWindowController <NSTableViewDelegate>
