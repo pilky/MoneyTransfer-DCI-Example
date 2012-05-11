@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		994FB2D2155D9DF100421B16 /* M3ErrorFactory.m in Sources */ = {isa = PBXBuildFile; fileRef = 994FB2CC155D9DB700421B16 /* M3ErrorFactory.m */; };
+		994FB2D3155D9DFE00421B16 /* M3CloseAccountContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DBA155ABC8E000F4565 /* M3CloseAccountContext.m */; };
+		994FB2D4155D9E3900421B16 /* M3TransferMoneyContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DB4155ABC70000F4565 /* M3TransferMoneyContext.m */; };
 		99EA8F2615587A460006CE30 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 99EA8F2515587A460006CE30 /* Cocoa.framework */; };
 		99EA8F3015587A460006CE30 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 99EA8F2E15587A460006CE30 /* InfoPlist.strings */; };
 		99EA8F3215587A460006CE30 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F3115587A460006CE30 /* main.m */; };
@@ -20,15 +23,15 @@
 		99EA8F661559ACDF0006CE30 /* DCIContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F651559ACDF0006CE30 /* DCIContext.m */; };
 		99EB8DAB155A9A03000F4565 /* DCIRole.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DA8155A9422000F4565 /* DCIRole.m */; };
 		99EB8DBD155ABCF3000F4565 /* M3DepositMoneyContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DB1155ABC46000F4565 /* M3DepositMoneyContext.m */; };
-		99EB8DBE155ABCF3000F4565 /* M3TransferMoneyContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DB4155ABC70000F4565 /* M3TransferMoneyContext.m */; };
 		99EB8DBF155ABCF3000F4565 /* M3OpenAccountContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DB7155ABC80000F4565 /* M3OpenAccountContext.m */; };
-		99EB8DC0155ABCF3000F4565 /* M3CloseAccountContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DBA155ABC8E000F4565 /* M3CloseAccountContext.m */; };
 		99EB8DC1155ABCF3000F4565 /* M3OverdraftAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F5D15594FB60006CE30 /* M3OverdraftAccount.m */; };
 		99EB8DC2155ABCF3000F4565 /* M3SavingsAccount.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EA8F5F15594FB60006CE30 /* M3SavingsAccount.m */; };
 		99EB8DC3155ABDF5000F4565 /* M3WithdrawMoneyContext.m in Sources */ = {isa = PBXBuildFile; fileRef = 99EB8DAE155ABC14000F4565 /* M3WithdrawMoneyContext.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		994FB2CB155D9DB700421B16 /* M3ErrorFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = M3ErrorFactory.h; sourceTree = "<group>"; };
+		994FB2CC155D9DB700421B16 /* M3ErrorFactory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = M3ErrorFactory.m; sourceTree = "<group>"; };
 		99EA8F2115587A460006CE30 /* Money Transfer DCI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money Transfer DCI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		99EA8F2515587A460006CE30 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		99EA8F2815587A460006CE30 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -153,6 +156,8 @@
 				99EA8F5D15594FB60006CE30 /* M3OverdraftAccount.m */,
 				99EA8F5E15594FB60006CE30 /* M3SavingsAccount.h */,
 				99EA8F5F15594FB60006CE30 /* M3SavingsAccount.m */,
+				994FB2CB155D9DB700421B16 /* M3ErrorFactory.h */,
+				994FB2CC155D9DB700421B16 /* M3ErrorFactory.m */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -279,12 +284,13 @@
 				99EA8F661559ACDF0006CE30 /* DCIContext.m in Sources */,
 				99EB8DAB155A9A03000F4565 /* DCIRole.m in Sources */,
 				99EB8DBD155ABCF3000F4565 /* M3DepositMoneyContext.m in Sources */,
-				99EB8DBE155ABCF3000F4565 /* M3TransferMoneyContext.m in Sources */,
 				99EB8DBF155ABCF3000F4565 /* M3OpenAccountContext.m in Sources */,
-				99EB8DC0155ABCF3000F4565 /* M3CloseAccountContext.m in Sources */,
 				99EB8DC1155ABCF3000F4565 /* M3OverdraftAccount.m in Sources */,
 				99EB8DC2155ABCF3000F4565 /* M3SavingsAccount.m in Sources */,
 				99EB8DC3155ABDF5000F4565 /* M3WithdrawMoneyContext.m in Sources */,
+				994FB2D2155D9DF100421B16 /* M3ErrorFactory.m in Sources */,
+				994FB2D3155D9DFE00421B16 /* M3CloseAccountContext.m in Sources */,
+				994FB2D4155D9E3900421B16 /* M3TransferMoneyContext.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

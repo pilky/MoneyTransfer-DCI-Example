@@ -8,6 +8,7 @@
 
 #import "M3WithdrawMoneyContext.h"
 #import "M3OverdraftAccount.h"
+#import "M3ErrorFactory.h"
 
 //1. Select account
 //2. Select amount
@@ -41,21 +42,12 @@
 	role[@"withdrawAmount:error:"] = ^(M3Account *player, NSUInteger aAmount, NSError **aError) {
 		NSArray *allowedAccountTypes = @[ [M3Account class], [M3OverdraftAccount class] ];
 		if (![allowedAccountTypes containsObject:player.class]) {
-			*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:3 userInfo:@{
-				NSLocalizedDescriptionKey : @"You cannot directly withdraw from this account",
-				NSLocalizedRecoverySuggestionErrorKey : @"Please transfer to another account before withdrawing"
-			}];
+			*aError = [M3ErrorFactory accountDoesntSupportWithdrawlsError];
 			return NO;
 		}
 
 		if (aAmount > player.availableBalance) {
-			NSNumberFormatter *formatter = [NSNumberFormatter new];
-			[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-		
-			*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:2 userInfo:@{
-				NSLocalizedDescriptionKey : @"Insufficient funds to withdraw",
-				NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"You can only withdraw up to %@ from this account", [formatter stringForObjectValue:[NSNumber numberWithInteger:player.availableBalance]]]
-			}];
+			*aError = [M3ErrorFactory insufficientFundsErrorWithAvailableBalance:player.availableBalance];
 			return NO;
 		}
 		

@@ -9,6 +9,7 @@
 #import "M3Bank.h"
 #import "M3SavingsAccount.h"
 #import "M3OverdraftAccount.h"
+#import "M3ErrorFactory.h"
 
 @implementation M3Bank {
 	NSMutableArray *accounts;
@@ -37,11 +38,7 @@
 		return YES;
 	}
 	
-	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:1 userInfo:@{
-		NSLocalizedDescriptionKey : @"Could not close account",
-		NSLocalizedRecoverySuggestionErrorKey : @"Please empty the account's balance before closing it."
-	}];
-	
+	*aError = [M3ErrorFactory accountToCloseHasNonEmptyBalanceError];
 	return NO;
 }
 

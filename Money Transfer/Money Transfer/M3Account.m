@@ -7,6 +7,7 @@
 //
 
 #import "M3Account.h"
+#import "M3ErrorFactory.h"
 
 @implementation M3Account
 
@@ -32,22 +33,13 @@
 		return YES;
 	}
 
-	NSNumberFormatter *formatter = [NSNumberFormatter new];
-	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-
-	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:2 userInfo:@{
-		NSLocalizedDescriptionKey : @"Insufficient funds to withdraw",
-		NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"You can only withdraw up to %@ from this account", [formatter stringForObjectValue:[NSNumber numberWithInteger:self.availableBalance]]]
-	}];
+	*aError = [M3ErrorFactory insufficientFundsErrorWithAvailableBalance:self.availableBalance];
 	return NO;
 }
 
 - (BOOL)transfer:(NSUInteger)aAmount toAccount:(M3Account *)aDestinationAccount error:(NSError *__autoreleasing *)aError {
 	if (!aDestinationAccount) {
-		*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:2 userInfo:@{
-			NSLocalizedDescriptionKey : @"No account selected",
-			NSLocalizedRecoverySuggestionErrorKey : @"Please select an account to transfer to."
-		}];
+		*aError = [M3ErrorFactory noTransferDestinationAccountSelectedError];
 		return NO;
 	}
 
@@ -57,13 +49,7 @@
 		return YES;
 	}
 
-	NSNumberFormatter *formatter = [NSNumberFormatter new];
-	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
-	
-	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:2 userInfo:@{
-		NSLocalizedDescriptionKey : @"Insufficient funds to withdraw",
-		NSLocalizedRecoverySuggestionErrorKey : [NSString stringWithFormat:@"You can only withdraw up to %@ from this account", [formatter stringForObjectValue:[NSNumber numberWithInteger:self.availableBalance]]]
-	}];
+	*aError = [M3ErrorFactory insufficientFundsErrorWithAvailableBalance:self.availableBalance];
 	return NO;
 }
 

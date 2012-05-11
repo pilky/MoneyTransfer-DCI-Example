@@ -7,14 +7,12 @@
 //
 
 #import "M3SavingsAccount.h"
+#import "M3ErrorFactory.h"
 
 @implementation M3SavingsAccount
 
 - (BOOL)withdraw:(NSUInteger)aAmount error:(NSError *__autoreleasing *)aError {
-	*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:3 userInfo:@{
-		NSLocalizedDescriptionKey : @"You cannot directly withdraw from this account",
-		NSLocalizedRecoverySuggestionErrorKey : @"Please transfer to another account before withdrawing"
-	}];
+	*aError = [M3ErrorFactory accountDoesntSupportWithdrawlsError];
 	return NO;
 }
 

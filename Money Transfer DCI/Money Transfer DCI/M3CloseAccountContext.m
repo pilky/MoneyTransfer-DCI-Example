@@ -7,6 +7,7 @@
 //
 
 #import "M3CloseAccountContext.h"
+#import "M3ErrorFactory.h"
 
 @protocol M3AccountCloserRole <NSObject>
 
@@ -36,10 +37,7 @@
 			return YES;
 		}
 
-		*aError = [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:1 userInfo:@{
-			NSLocalizedDescriptionKey : @"Could not close account",
-			NSLocalizedRecoverySuggestionErrorKey : @"Please empty the account's balance before closing it."
-		}];
+		*aError = [M3ErrorFactory accountToCloseHasNonEmptyBalanceError];
 		return NO;
 	};
 
