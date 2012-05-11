@@ -11,8 +11,6 @@
 
 @interface M3TransferMoneyContext : DCIContext
 
-- (id)initWithSourceAccount:(M3Account *)aSourceAccount destinationAccount:(M3Account *)aDestinationAccount;
-
-- (BOOL)transferAmount:(NSUInteger)aAmount error:(NSError **)aError;
+- (id)initWithSourceAccount:(M3Account *)aSourceAccount destinationAccount:(M3Account *)aDestinationAccount amount:(NSUInteger)aAmount;
 
 @end

@@ -44,12 +44,11 @@
 	return role;
 }
 
-- (BOOL)closeAccountWithError:(NSError **)aError {
-	__block BOOL success = NO;
-	[self execute:^{
-		success = [bank closeAccountWithError:&*aError];
-	}];
-	return success;
+- (void)main {
+	NSError *error = nil;
+	if (![bank closeAccountWithError:&error]) {
+		[self returnError:error];
+	}
 }
 
 @end

@@ -14,6 +14,4 @@
 
 - (id)initWithBank:(M3Bank *)aBank closingAccount:(M3Account *)aAccount;
 
-- (BOOL)closeAccountWithError:(NSError **)aError;
-
 @end

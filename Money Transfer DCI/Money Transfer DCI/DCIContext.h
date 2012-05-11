@@ -11,7 +11,15 @@
 
 @interface DCIContext : NSObject
 
+//Don't override
+//Call from outside
+- (BOOL)start:(NSError **)aError;
+
+//Call from inside
 - (id)playerFromObject:(id)aObject forRole:(DCIRole *)aRole;
-- (void)execute:(void (^)(void))aBlock;
+- (void)returnError:(NSError *)aError;
+
+//Override
+- (void)main;
 
 @end

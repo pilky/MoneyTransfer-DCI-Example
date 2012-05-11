@@ -16,11 +16,13 @@
 
 @implementation M3DepositMoneyContext {
 	M3Account<M3DepositingAccountRole> *destinationAccount;
+	NSUInteger amount;
 }
 
-- (id)initWithDestinationAccount:(M3Account *)aAccount {
+- (id)initWithDestinationAccount:(M3Account *)aAccount amount:(NSUInteger)aAmount {
 	if ((self = [super init])) {
 		destinationAccount = [self playerFromObject:aAccount forRole:self.destinationAccountRole];
+		amount = aAmount;
 	}
 	return self;
 }
@@ -35,8 +37,8 @@
 	return role;
 }
 
-- (void)depositAmount:(NSUInteger)aAmount {
-	[destinationAccount depositAmount:aAmount];
+- (void)main {
+	[destinationAccount depositAmount:amount];
 }
 
 @end

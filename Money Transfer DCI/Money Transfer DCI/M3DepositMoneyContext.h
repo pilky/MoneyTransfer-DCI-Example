@@ -11,8 +11,6 @@
 
 @interface M3DepositMoneyContext : DCIContext
 
-- (id)initWithDestinationAccount:(M3Account *)aAccount;
-
-- (void)depositAmount:(NSUInteger)aAmount;
+- (id)initWithDestinationAccount:(M3Account *)aAccount amount:(NSUInteger)aAmount;
 
 @end

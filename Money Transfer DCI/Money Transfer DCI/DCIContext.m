@@ -13,6 +13,8 @@ NSString *DCIPlayerRole = @"DCIPlayerRole";
 
 @implementation DCIContext {
 	NSMutableArray *players;
+	BOOL failed;
+	NSError *error;
 }
 
 - (id)init {
@@ -27,11 +29,26 @@ NSString *DCIPlayerRole = @"DCIPlayerRole";
 	return aObject;
 }
 
-- (void)execute:(void (^)(void))aBlock {
+- (BOOL)start:(NSError **)aError {
 	for (NSDictionary *player in players) {
 		[player[DCIPlayerRole] applyToObject:player[DCIPlayerObject]];
 	}
-	aBlock();
+
+	[self main];
+
+	if(failed && aError != NULL) {
+		*aError = error;
+		return NO;
+	}
+	return YES;
 }
 
+- (void)returnError:(NSError *)aError {
+	failed = YES;
+	error = aError;
+}
+
+- (void)main {
+	@throw [NSException exceptionWithName:@"DCIContextMainNotImplemented" reason:@"You need to override the -main method" userInfo:nil];
+}
 @end

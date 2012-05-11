@@ -20,11 +20,15 @@
 
 @implementation M3OpenAccountContext {
 	M3Bank<M3AccountOpenerRole> *bank;
+	NSString *accountID;
+	M3AccountType type;
 }
 
-- (id)initWithBank:(M3Bank *)aBank {
+- (id)initWithBank:(M3Bank *)aBank accountID:(NSString *)aID type:(M3AccountType)aType {
 	if ((self = [super init])) {
 		bank = [self playerFromObject:aBank forRole:self.accountOpenerRole];
+		accountID = aID;
+		type = aType;
 	}
 	return self;
 }
@@ -41,10 +45,8 @@
 	return role;
 }
 
-- (void)openAccountWithID:(NSString *)aID type:(M3AccountType)aType {
-	[self execute:^{
-		[bank openAccountWithID:aID type:aType];
-	}];
+- (void)main {
+	[bank openAccountWithID:accountID type:type];
 }
 
 @end

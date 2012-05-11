@@ -27,11 +27,13 @@
 
 @implementation M3WithdrawMoneyContext {
 	M3Account<M3WithdrawlSource> *sourceAccount;
+	NSUInteger amount;
 }
 
-- (id)initWithSourceAccount:(M3Account *)aSourceAccount {
+- (id)initWithSourceAccount:(M3Account *)aSourceAccount amount:(NSUInteger)aAmount {
 	if ((self = [super init])) {
 		sourceAccount = [self playerFromObject:aSourceAccount forRole:self.sourceAccountRole];
+		amount = aAmount
 	}
 	return self;
 }
@@ -58,12 +60,11 @@
 	return role;
 }
 
-- (BOOL)withdrawAmount:(NSUInteger)aAmount error:(NSError **)aError {
-	__block BOOL success = NO;
-	[self execute:^{
-		success = [sourceAccount withdrawAmount:aAmount error:&*aError];
-	}];
-	return success;
+- (void)main {
+	NSError *error = nil;
+	if(![sourceAccount withdrawAmount:amount error:&error]) {
+		[self returnError:error];
+	}
 }
 
 @end

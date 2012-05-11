@@ -11,8 +11,6 @@
 
 @interface M3WithdrawMoneyContext : DCIContext
 
-- (id)initWithSourceAccount:(M3Account *)aSourceAccount;
-
-- (BOOL)withdrawAmount:(NSUInteger)aAmount error:(NSError **)aError;
+- (id)initWithSourceAccount:(M3Account *)aSourceAccount amount:(NSUInteger)aAmount;
 
 @end

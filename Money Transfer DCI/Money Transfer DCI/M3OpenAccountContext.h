@@ -17,8 +17,6 @@ typedef enum {
 
 @interface M3OpenAccountContext : DCIContext
 
-- (id)initWithBank:(M3Bank *)aBank;
-
-- (void)openAccountWithID:(NSString *)aID type:(M3AccountType)aType;
+- (id)initWithBank:(M3Bank *)aBank accountID:(NSString *)aID type:(M3AccountType)aType;
 
 @end

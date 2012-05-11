@@ -18,12 +18,14 @@
 @implementation M3TransferMoneyContext {
 	M3Account<M3TransferSourceAccount> *sourceAccount;
 	M3Account *destinationAccount;
+	NSUInteger amount;
 }
 
-- (id)initWithSourceAccount:(M3Account *)aSourceAccount destinationAccount:(M3Account *)aDestinationAccount {
+- (id)initWithSourceAccount:(M3Account *)aSourceAccount destinationAccount:(M3Account *)aDestinationAccount amount:(NSUInteger)aAmount{
 	if ((self = [super init])) {
 		sourceAccount = [self playerFromObject:aSourceAccount forRole:self.sourceAccountRole];
 		destinationAccount = aDestinationAccount;
+		amount = aAmount;
 	}
 	return self;
 }
@@ -50,12 +52,11 @@
 	return role;
 }
 
-- (BOOL)transferAmount:(NSUInteger)aAmount error:(NSError **)aError {
-	__block BOOL success = NO;
-	[self execute:^{
-		success = [sourceAccount transferAmount:aAmount error:&*aError];
-	}];
-	return success;
+- (void)main {
+	NSError *error = nil;
+	if (![sourceAccount transferAmount:amount error:&error]) {
+		[self returnError:error];
+	}
 }
 
 @end
