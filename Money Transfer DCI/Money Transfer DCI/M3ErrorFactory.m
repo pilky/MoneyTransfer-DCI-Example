@@ -21,7 +21,7 @@
 	NSNumberFormatter *formatter = [NSNumberFormatter new];
 	[formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
 
-	NSString *available = [formatter stringForObjectValue:[NSNumber numberWithInteger:self.availableBalance]];
+	NSString *available = [formatter stringForObjectValue:[NSNumber numberWithInteger:aAvailableBalance]];
 	NSString *recoverySuggestion = [NSString stringWithFormat:@"You can only withdraw up to %@ from this account", available];
 
 	return [NSError errorWithDomain:@"com.mcubedsw.moneytransfer" code:2 userInfo:@{

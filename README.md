@@ -21,6 +21,8 @@ The DCI example has two important classes that implement DCI:
 
 - **DCIRole** This represents a role for an object. It contains the methods for the role, which can then be applied to any object at runtime.
 
+You can find out more information on how to use these by looking at the comments in the M3TransferMoneyContext class.
+
 Alternative branches
 -----------------
 

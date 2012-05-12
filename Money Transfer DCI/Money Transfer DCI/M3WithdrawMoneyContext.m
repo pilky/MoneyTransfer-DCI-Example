@@ -10,13 +10,6 @@
 #import "M3OverdraftAccount.h"
 #import "M3ErrorFactory.h"
 
-//1. Select account
-//2. Select amount
-//3. Withdraw
-	//3.1 Check if account supports withdrawls
-	//3.2 Check if we have enough in account
-	//Withdraw
-
 @protocol M3WithdrawlSource <NSObject>
 
 - (BOOL)withdrawAmount:(NSUInteger)aAmount error:(NSError **)aError;
