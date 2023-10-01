@@ -13,7 +13,7 @@ You can find more information at [fulloo.info](http://fulloo.info)
 About the project
 --------------
 
-There are currently two Xcode projects in this repository. The first is the bank app written in a plain old MVC style. The second is the same app written using DCI principles. The reason for having two apps is to help show the differences, but also to help show whether DCI actually is beneficial (this is very much an experiment).
+There are currently two Xcode projects in this repository. The first is the bank app written in a plain old MVC style. The second is the same app written using DCI principles. The reason for having two apps is to help show the differences, but also to help show whether DCI actually is beneficial 
 
 The DCI example has two important classes that implement DCI:
 
